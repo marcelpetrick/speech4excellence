@@ -9,8 +9,8 @@ Voice transcription prototype with openAI's Whisper and PyQt-UI and Excel output
 
 **speech4excellence** stands as a homage to the untapped potential within your voice, transforming verbal gold into the
 structured silver of Excel spreadsheets. Embark on a journey from spoken word to written excellence, where each
-utterance finds its place in a cell, as meticulously organized as a librarian with OCD. In essence, **speech4excellence
-** is not merely a program; it's a bridge between the fluidity of conversation and the rigidity of data analysis. Akin
+utterance finds its place in a cell, as meticulously organized as a librarian with OCD. In essence, **speech4excellence**
+is not merely a program; it's a bridge between the fluidity of conversation and the rigidity of data analysis. Akin
 to alchemy, but for the digital age.
 
 ## Features
@@ -74,4 +74,7 @@ at [mail@marcelpetrick.it](mailto:mail@marcelpetrick.it).
 ---
 
 Remember, **speech4excellence** is not just about transcribing words; it's about charting the unexplored territories of
-your Excel spreadsheets. Let your voice be the compass.
+your Excel spreadsheets. Let your voice be the compass.  
+
+Haha, thanks for reading until the last line. This is just a README file, not a novel. But I appreciate your dedication.
+
