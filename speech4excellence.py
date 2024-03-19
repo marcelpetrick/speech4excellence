@@ -10,13 +10,25 @@ from excelWriter import ExcelWriter
 
 
 class MainWindow(QWidget):
+    """
+    Main window class for the application, handling user interactions
+    and integrating functionalities of audio recording, transcribing,
+    and writing to Excel.
+    """
+
     def __init__(self, transcriber):
+        """
+        Initializes the main window with a given transcriber.
+
+        :param transcriber: Instance of AudioTranscriber for transcribing audio.
+        """
         super().__init__()
-        self.transcriber = transcriber  # The AudioTranscriber instance
+        self.transcriber = transcriber
         self.recorder = AudioRecorder()
         self.initUI()
 
     def initUI(self):
+        """Initializes the user interface components."""
         self.layout = QVBoxLayout()
 
         self.timecodeLabel = QLabel('00:00:00')
@@ -116,37 +128,54 @@ class MainWindow(QWidget):
         # Assume the ExcelWriter class has an `insert_text` method
         try:
             excel_writer = ExcelWriter(excel_filename)
-            print(f"Writing transcription to {excel_filename}")
-            print(f"transcription_text: {transcription_text}")
             excel_writer.insert_text(transcription_text)
             print(f"Transcription written to {excel_filename}")
         except Exception as e:
             print(f"Error writing to Excel: {e}")
 
     def updateAmplitude(self, rms):
+        """
+        Updates the amplitude label with the given root mean square (rms) value.
+
+        :param rms: The root mean square value to display.
+        """
         self.amplitudeLabel.setText(f'Amplitude: {rms}')
 
     def toggleRecording(self):
+        """
+        Toggles the recording state. Starts recording if not currently recording,
+        otherwise stops recording and saves the audio file.
+        """
         if self.recorder.is_recording:
             self.recorder.stop()
             self.recorder.wait()  # Wait for the recording thread to finish
             filename = self.filenameLineEdit.text()
             if not filename.endswith('.mp3'):
                 filename += '.mp3'
-            self.recorder.save('temp.wav')
-            if os.path.exists(filename):
-                os.remove(filename)
-            os.rename('temp.mp3', filename)
+            try:
+                self.recorder.save('temp.wav')
+                if os.path.exists(filename):
+                    os.remove(filename)
+                os.rename('temp.mp3', filename)
+            except Exception as e:
+                print(f"Error during saving the recording: {e}")
             self.recordButton.setText('Record')
         else:
             self.recorder.start()
             self.recordButton.setText('Stop')
 
     def updateTimecode(self, timecode):
+        """
+        Updates the timecode label.
+
+        :param timecode: The timecode string to display.
+        """
         self.timecodeLabel.setText(timecode)
 
     def transcribeAudio(self):
-        """Transcribe the recorded audio and display the text."""
+        """
+        Attempts to transcribe the currently recorded audio and display the text.
+        """
         filename = self.filenameLineEdit.text()
         if not os.path.exists(filename):
             self.transcriptionPreview.setText("File not found. Please record something first.")
@@ -156,6 +185,7 @@ class MainWindow(QWidget):
             self.transcriptionPreview.setText(transcription)
         except Exception as e:
             self.transcriptionPreview.setText(f"Error during transcription: {e}")
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
