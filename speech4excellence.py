@@ -115,6 +115,7 @@ class MainWindow(QWidget):
 
         # Set the window icon
         self.setWindowIcon(QIcon('icon.png'))
+        self.resize(460, 460) # why so crude? I needed a good, unscaled Linkedin recording
 
         self.show()
 
