@@ -13,6 +13,12 @@ utterance finds its place in a cell, as meticulously organized as a librarian wi
 is not merely a program; it's a bridge between the fluidity of conversation and the rigidity of data analysis. Akin
 to alchemy, but for the digital age.
 
+## How does it look in action?
+<video width="500" height="520" controls>
+  <source src="recording.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Features
 
 - **Audio Recording**: Capture every nuance of your voice with crystal-clear digital recording.
