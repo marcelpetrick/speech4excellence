@@ -14,10 +14,7 @@ is not merely a program; it's a bridge between the fluidity of conversation and 
 to alchemy, but for the digital age.
 
 ## How does it look in action?
-<video width="500" height="520" controls>
-  <source src="recording.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[video of the usage](recording.mp4)
 
 ## Features
 
