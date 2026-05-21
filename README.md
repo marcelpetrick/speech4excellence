@@ -5,6 +5,12 @@ Voice transcription prototype with openAI's Whisper and PyQt-UI and Excel output
 
 ![screenshot of the ui](screenshot_ui.png)
 
+**Author: Marcel Petrick <mail@marcelpetrick.it>**
+
+**Note: projected is generated with AI.**
+
+**License: GPLv3 or later. See `LICENSE`.**
+
 ## Introduction
 
 **speech4excellence** stands as a homage to the untapped potential within your voice, transforming verbal gold into the
